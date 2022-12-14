@@ -9,7 +9,7 @@ use std::{ //This brings in three sub-modules into scope along with its sub-modu
 };
 
 fn main() {
-    let listener = TcpListener::bind("0.0.0.0:7878").unwrap(); //Create a listener instance that is bounded to this address and binds to the port while unwrapping any possible errors. Returns a Result<T,E>.
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap(); //Create a listener instance that is bounded to this address and binds to the port while unwrapping any possible errors. Returns a Result<T,E>.
     let pool = ThreadPool::new(4); //Creates a thread pool holding 4 max threads. The max limit passed in the constructor parameter.
 
     for stream in listener.incoming().take(2){ //Take in 2 requests that will come from the address and shut down after the second thread completes its operation.
